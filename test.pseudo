@@ -52,5 +52,10 @@ GOTO: 사용자의_입력_검증: TDD {
 }
 
 GOTO: 유효한_사용자의_입력에_따른_단어_밀어내기_기능_검증: TDD {
-
+  test("사용자의 입력 중 세번째 문자열(L 또는 R)이 L이면 주어진 숫자 갯수만큼 왼쪽으로, R이면 오른쪽으로 밀어낸다. 밀려나간 단어는 반대쪽으로 채워진다.", {
+    expect(rotateWord("apple", 3, "L")).toBe("leapp");
+    expect(rotateWord("banana", 6, "R")).toBe("banana");
+    expect(rotateWord("carrot", -1, "r")).toBe("arrotc");
+    expect(rotateWord("cat", -4, "R")).toBe("atc");
+  });
 }
